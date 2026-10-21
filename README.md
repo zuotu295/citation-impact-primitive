@@ -22,7 +22,7 @@ Python 3.12+, no external test dependencies:
 python -m unittest discover -s tests -v
 ```
 
-The 35 tests mock the GenLayer host, retrieval and model responses. They exercise owner isolation, immutable records, source mismatch, unsupported evidence, validator disagreement, revision concurrency, notice deduplication, full retractions, concern handling and conservative cumulative actions. They do not demonstrate execution inside the fixed GenVM runner or live validator consensus.
+The 36 tests mock the GenLayer host, retrieval and model responses. They exercise owner isolation, immutable records, source mismatch, unsupported evidence, validator disagreement, revision concurrency, notice deduplication, full retractions, concern handling and conservative cumulative actions. They do not demonstrate execution inside the fixed GenVM runner or live validator consensus.
 
 ## Deploy and call
 
@@ -34,7 +34,7 @@ Read `get_dossier(owner, id)`, `get_revision(owner, id)` and `get_review(owner, 
 
 ## Deployment record
 
-`deployment.json` contains the current source SHA256 and network. No deployed address or finalized live assessment has been recorded for this source release. Fill deployment fields only from independently verified chain evidence.
+`deployment.json` pins the source SHA256, network, deployed address and finalized example. [Network evidence](evidence/studionet-v3.json) records all three transactions; [revision 1](evidence/review-1.json) contains the persisted dossier, publisher snapshot and assessment.
 
 ## Scope
 
@@ -42,6 +42,6 @@ PLOS ONE textual publisher corrections, retractions and expressions of concern. 
 
 MIT · zuotu295
 
-## Network verification
+## Finalized example
 
-The previous source deployed and sealed the example on Stable Studionet, but its assessment ended with `MAJORITY_DISAGREE` after three rotations and persisted no review. [Pinned network observations](evidence/studionet-v1.json) identify that source and all three transactions. The revised source-grounded validator included here has passed local protocol tests but has not yet been deployed or verified by live consensus.
+The sealed dossier cites study scope (C1) and reproduces an author affiliation (C2). The official affiliation correction finalized with majority agreement and persisted revision 1: C1 `NO_CHANGE_FROM_NOTICE`, C2 `REWRITE`. This result concerns this notice only; it does not establish the paper’s scientific validity. Earlier source versions and their unsuccessful assessments remain separately pinned in the evidence directory.
