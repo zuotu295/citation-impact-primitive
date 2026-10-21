@@ -1,5 +1,7 @@
 # Citation Impact Primitive
 
+[ErrataScope application](https://zuotu295.github.io/erratascope-genlayer/) · [Application source](https://github.com/zuotu295/erratascope-genlayer)
+
 A GenLayer Intelligent Contract that preserves how a specific publisher notice affects an immutable set of citation uses. One paper can be cited for multiple reasons; a correction need not affect every use equally.
 
 ## Mechanism
