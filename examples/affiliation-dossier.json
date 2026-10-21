@@ -1,0 +1,16 @@
+{
+  "doi": "10.1371/journal.pone.0251194",
+  "title": "A computational reproducibility study of PLOS ONE articles featuring longitudinal data analyses",
+  "claims": [
+    {
+      "id": "C1",
+      "text": "I cite this paper as a computational reproducibility study of longitudinal data analyses.",
+      "locator": "Title and study scope"
+    },
+    {
+      "id": "C2",
+      "text": "I will reproduce Verena Loidl’s affiliation from the original publication.",
+      "locator": "Author affiliation 5"
+    }
+  ]
+}
