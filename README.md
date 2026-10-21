@@ -22,7 +22,7 @@ Python 3.12+, no external test dependencies:
 python -m unittest discover -s tests -v
 ```
 
-The 25 tests mock the GenLayer host, retrieval and model responses. They exercise owner isolation, immutable records, source mismatch, unsupported evidence, validator disagreement, revision concurrency, notice deduplication, full retractions, concern handling and conservative cumulative actions. They do not demonstrate execution inside the fixed GenVM runner or live validator consensus.
+The 35 tests mock the GenLayer host, retrieval and model responses. They exercise owner isolation, immutable records, source mismatch, unsupported evidence, validator disagreement, revision concurrency, notice deduplication, full retractions, concern handling and conservative cumulative actions. They do not demonstrate execution inside the fixed GenVM runner or live validator consensus.
 
 ## Deploy and call
 
@@ -41,3 +41,7 @@ Read `get_dossier(owner, id)`, `get_revision(owner, id)` and `get_review(owner, 
 PLOS ONE textual publisher corrections, retractions and expressions of concern. The primitive assesses declared citation uses against one notice; it does not establish a paper’s truth or search for all later notices. User-supplied claims are not authenticated as original experimental findings.
 
 MIT · zuotu295
+
+## Network verification
+
+The previous source deployed and sealed the example on Stable Studionet, but its assessment ended with `MAJORITY_DISAGREE` after three rotations and persisted no review. [Pinned network observations](evidence/studionet-v1.json) identify that source and all three transactions. The revised source-grounded validator included here has passed local protocol tests but has not yet been deployed or verified by live consensus.
