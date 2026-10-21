@@ -22,13 +22,13 @@ Python 3.12+, no external test dependencies:
 python -m unittest discover -s tests -v
 ```
 
-The 36 tests mock the GenLayer host, retrieval and model responses. They exercise owner isolation, immutable records, source mismatch, unsupported evidence, validator disagreement, revision concurrency, notice deduplication, full retractions, concern handling and conservative cumulative actions. They do not demonstrate execution inside the fixed GenVM runner or live validator consensus.
+The 36 tests mock the GenLayer host, retrieval and model responses. They exercise owner isolation, immutable records, source mismatch, unsupported evidence, validator disagreement, revision concurrency, notice deduplication, full retractions, concern handling and conservative cumulative actions. Live execution is documented separately in the deployment evidence below.
 
 ## Deploy and call
 
 Deploy `contracts/errata_scope.py` with **no constructor arguments** on Stable Studionet, chain ID **61999**. The first-line dependency pins the GenVM Python SDK. Use full consensus rather than leader-only mode.
 
-Call `seal("citation-notebook", payload)` with the JSON content of `examples/affiliation-dossier.json` as the payload string. Then call `assess("citation-notebook", "10.1371/journal.pone.0269047", 0)`. Actual classification depends on source retrieval and validator consensus; the example is an input, not a claimed on-chain result.
+Call `seal("citation-notebook", payload)` with the JSON content of `examples/affiliation-dossier.json` as the payload string. Then call `assess("citation-notebook", "10.1371/journal.pone.0269047", 0)`. The input fixture is also used by the finalized example below. New assessments depend on publisher retrieval and validator consensus.
 
 Read `get_dossier(owner, id)`, `get_revision(owner, id)` and `get_review(owner, id, revision)` to inspect persisted state. Full method descriptions, decision rules and limits are in [PROTOCOL.md](PROTOCOL.md).
 
@@ -40,8 +40,8 @@ Read `get_dossier(owner, id)`, `get_revision(owner, id)` and `get_review(owner, 
 
 PLOS ONE textual publisher corrections, retractions and expressions of concern. The primitive assesses declared citation uses against one notice; it does not establish a paper’s truth or search for all later notices. User-supplied claims are not authenticated as original experimental findings.
 
-MIT · zuotu295
-
 ## Finalized example
 
-The sealed dossier cites study scope (C1) and reproduces an author affiliation (C2). The official affiliation correction finalized with majority agreement and persisted revision 1: C1 `NO_CHANGE_FROM_NOTICE`, C2 `REWRITE`. This result concerns this notice only; it does not establish the paper’s scientific validity. Earlier source versions and their unsuccessful assessments remain separately pinned in the evidence directory.
+The sealed dossier cites study scope (C1) and reproduces an author affiliation (C2). The official affiliation correction finalized with majority agreement and persisted revision 1: C1 `NO_CHANGE_FROM_NOTICE`, C2 `REWRITE`. This result concerns this notice only; it does not establish the paper’s scientific validity.
+
+MIT · zuotu295
